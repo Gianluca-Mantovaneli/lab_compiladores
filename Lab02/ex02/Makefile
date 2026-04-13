@@ -2,11 +2,8 @@
 JAVAC=javac
 # Comando da JVM
 JAVA=java
-# ROOT é a raiz dos diretórios com todos os roteiros de laboratórios
-YEAR=$(shell pwd | grep -o '20..-.')
-ROOT=/home/zambon/Teaching/$(YEAR)/CC/labs
 # Caminho para o JAR do ANTLR em labs/tools
-ANTLR_PATH=$(ROOT)/tools/antlr-4.11.1-complete.jar
+ANTLR_PATH=/home/gianluca/lab_compiladores/Lab02/tools/antlr-4.13.2-complete.jar
 # Opção de configuração do CLASSPATH para o ambiente Java
 CLASS_PATH_OPTION=-cp .:$(ANTLR_PATH)
 # Configuração do comando de compilação do ANTLR
@@ -34,3 +31,6 @@ run:
 clean:
 	@rm -rf $(GEN_PATH)
 
+# Faz o teste com a tag -gui
+gui:
+	cd $(GEN_PATH) && $(GRUN) $(GRAMMAR_NAME) begin -gui $(FILE)
