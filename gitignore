@@ -1,6 +1,0 @@
-/parser
-*.class
-*.java
-*.tokens
-*.interp
-*.log
