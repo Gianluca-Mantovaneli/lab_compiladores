@@ -1,5 +1,5 @@
+FILE= /home/gianluca/lab_compiladores/Lab02/exercicio/exercicio.pas
 # Comando do compilador Java
-FILE= /home/gianluca/lab_compiladores/Lab02/ex02/ex02.pas
 JAVAC=javac
 # Comando da JVM
 JAVA=java
@@ -12,7 +12,7 @@ ANTLR4=$(JAVA) -jar $(ANTLR_PATH)
 # Configuração do ambiente de teste do ANTLR
 GRUN=$(JAVA) $(CLASS_PATH_OPTION) org.antlr.v4.gui.TestRig
 # Nome da gramática
-GRAMMAR_NAME=Exemplo02
+GRAMMAR_NAME=exerc_gramar
 # Diretório para aonde vão os arquivos gerados
 GEN_PATH=parser
 
@@ -34,4 +34,5 @@ clean:
 
 # Faz o teste com a tag -gui
 gui:
+	make
 	cd $(GEN_PATH) && $(GRUN) $(GRAMMAR_NAME) begin -gui $(FILE)
